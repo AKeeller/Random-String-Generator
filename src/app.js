@@ -36,7 +36,7 @@ function setStatus(message) {
 lengthButtons.forEach(button => {
   button.addEventListener('click', () => {
     selectedLength = Number(button.dataset.length);
-    document.querySelector('.length-control').style.setProperty('--active-index', String(lengthButtons.indexOf(button)));
+    document.querySelector('.length-control').dataset.activeIndex = String(lengthButtons.indexOf(button));
     lengthButtons.forEach(item => {
       if (item === button) item.setAttribute('data-selected', 'true');
       else item.removeAttribute('data-selected');

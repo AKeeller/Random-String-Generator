@@ -32,7 +32,6 @@ body {
 }
 
 .length-control {
-  --active-index: 1;
   position: relative;
   display: inline-flex;
   gap: 4px;
@@ -52,8 +51,16 @@ body {
   border-radius: 8px;
   background: #f0f0f2;
   content: "";
-  transform: translateX(calc(var(--active-index) * 100%));
+  transform: translateX(0);
   transition: transform 220ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.length-control[data-active-index="1"]::before {
+  transform: translateX(calc(100% + 4px));
+}
+
+.length-control[data-active-index="2"]::before {
+  transform: translateX(calc(200% + 8px));
 }
 
 button {
