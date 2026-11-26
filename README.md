@@ -1,5 +1,9 @@
 # Random String Generator
 
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/AKeeller/Random-String-Generator/pages.yml?branch=main&label=GitHub%20Pages)](https://github.com/AKeeller/Random-String-Generator/actions/workflows/pages.yml)
+[![Latest version](https://img.shields.io/github/v/tag/AKeeller/Random-String-Generator?label=latest%20version)](https://github.com/AKeeller/Random-String-Generator/tags)
+[![Docker image](https://img.shields.io/badge/container-ghcr.io%2Fakeeller%2Frandom--string--generator-blue?logo=docker)](https://ghcr.io/akeeller/random-string-generator)
+
 A small, installable web app for generating random passwords from printable ASCII characters, excluding spaces.
 
 ## Screenshot
