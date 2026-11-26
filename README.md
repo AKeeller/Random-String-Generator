@@ -24,13 +24,13 @@ docker build -t random-string-generator .
 docker run --rm -p 3000:3000 random-string-generator
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
 ### Use the public image
 
 ```sh
 docker run --rm -p 3000:3000 ghcr.io/akeeller/random-string-generator
 ```
+
+### Open the app
 
 Open [http://localhost:3000](http://localhost:3000).
 
