@@ -218,7 +218,7 @@ button {
   .result { height: 42vh; line-height: 1.25; }
 }
 
-@media (orientation: landscape) and (max-height: 500px) and (max-width: 900px) {
+@media (orientation: landscape) and (max-height: 500px) {
   .generator {
     display: grid;
     grid-template-columns: 192px minmax(0, 1fr);
