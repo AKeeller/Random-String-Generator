@@ -1,8 +1,8 @@
-const CACHE_NAME = 'random-string-v16';
+const CACHE_NAME = 'random-string-v17';
 const APP_FILES = [
   './',
   './index.html',
-  './styles.css',
+  './styles.css?v=17',
   './app.js',
   './manifest.webmanifest',
   './icon.svg',

@@ -217,3 +217,30 @@ button {
   .generator { gap: 18px; }
   .result { height: 42vh; line-height: 1.25; }
 }
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 900px) {
+  .generator {
+    display: grid;
+    grid-template-columns: 192px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px clamp(16px, 4vw, 32px);
+  }
+
+  .length-control {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .result {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: auto;
+    min-height: 0;
+    line-height: 1.25;
+  }
+
+  .actions {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
