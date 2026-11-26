@@ -30,8 +30,6 @@ docker run --rm -p 3000:3000 random-string-generator
 docker run --rm -p 3000:3000 ghcr.io/akeeller/random-string-generator
 ```
 
-### Open the app
-
 Open [http://localhost:3000](http://localhost:3000).
 
 ## Install and use offline
