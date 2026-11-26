@@ -129,7 +129,7 @@ button {
   overflow: hidden;
   color: var(--result);
   font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: clamp(20px, 6vw, 42px);
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.035em;
@@ -215,5 +215,5 @@ button {
 
 @media (max-height: 480px) {
   .generator { gap: 18px; }
-  .result { height: 42vh; font-size: clamp(16px, 5vh, 28px); line-height: 1.25; }
+  .result { height: 42vh; line-height: 1.25; }
 }
