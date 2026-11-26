@@ -32,12 +32,28 @@ body {
 }
 
 .length-control {
+  --active-index: 1;
+  position: relative;
   display: inline-flex;
   gap: 4px;
   padding: 4px;
   border: 1px solid #303137;
   border-radius: 12px;
   background: #191a1f;
+}
+
+.length-control::before {
+  position: absolute;
+  z-index: 0;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 8px - 8px) / 3);
+  border-radius: 8px;
+  background: #f0f0f2;
+  content: "";
+  transform: translateX(calc(var(--active-index) * 100%));
+  transition: transform 220ms cubic-bezier(.2, .8, .2, 1);
 }
 
 button {
@@ -48,6 +64,8 @@ button {
 }
 
 .length-control button {
+  position: relative;
+  z-index: 1;
   min-width: 58px;
   min-height: 42px;
   border: 0;
@@ -60,7 +78,6 @@ button {
 
 .length-control button[data-selected="true"] {
   color: #101114;
-  background: #f0f0f2;
 }
 
 .result {
