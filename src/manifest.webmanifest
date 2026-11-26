@@ -1,7 +1,7 @@
 {
   "name": "Random String Generator",
   "short_name": "Random String",
-  "description": "Generate random strings from an extended set of visible characters.",
+  "description": "Generate random passwords using all visible ASCII characters.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

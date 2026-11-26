@@ -1,19 +1,5 @@
-// A curated collection of printable characters. Combining marks, controls, and
-// multi-code-point emoji sequences are excluded so each choice is a visible glyph.
-const alphabet = Array.from(
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789' +
-  '¡¿«»‹›‐‑‒–—―…·•§¶†‡°‰′″※' +
-  'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞß' +
-  'àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ' +
-  'ĀĂĄĆĈČĎĐĒĖĘĞĢĪĮĶŁŃŅŇŌŐŔŘŚŞŠŢŤŪŮŰŹŻŽ' +
-  'āăąćĉčďđēėęğģīįķłńņňōőŕřśşšţťūůűźżž' +
-  'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω' +
-  'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя' +
-  'ƒ“”‘’€£¥¢₹₽₩₺₫₴₦₱₡₲₵₸' +
-  '∞≠≈≤≥±÷×√∑∏∫∆∂µπΩ∅∈∉⊂⊃∩∪∧∨¬∀∃→←↔↑↓↗↘↙↖' +
-  '♥♦♣♠♪♫✓✔✕✦✧★☆☀☁☂☃☯⚙⚡' +
-  '!#$%&()*+,-./:;=?@[\\]^_{|}~<>`"\' '
-);
+// All visible ASCII characters (0x21–0x7e), excluding whitespace.
+const alphabet = Array.from({ length: 94 }, (_, index) => String.fromCharCode(index + 0x21));
 
 const result = document.querySelector('#result');
 const status = document.querySelector('#status');
@@ -22,9 +8,19 @@ let selectedLength = 32;
 let statusTimer;
 
 function generate(length) {
-  const randomValues = new Uint32Array(length);
-  crypto.getRandomValues(randomValues);
-  result.textContent = Array.from(randomValues, value => alphabet[value % alphabet.length]).join('');
+  const characters = [];
+  const acceptedRange = Math.floor(0x1_0000_0000 / alphabet.length) * alphabet.length;
+
+  while (characters.length < length) {
+    const randomValues = new Uint32Array(Math.max(16, length - characters.length));
+    crypto.getRandomValues(randomValues);
+    for (const value of randomValues) {
+      if (value < acceptedRange) characters.push(alphabet[value % alphabet.length]);
+      if (characters.length === length) break;
+    }
+  }
+
+  result.textContent = characters.join('');
 }
 
 function setStatus(message) {
