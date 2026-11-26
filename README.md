@@ -2,6 +2,10 @@
 
 A small, installable web app for generating random passwords from printable ASCII characters, excluding spaces.
 
+## Screenshot
+
+<img width="379" height="546" alt="image" src="https://github.com/user-attachments/assets/db8c9d47-b100-44e9-a723-db87ad5666ef" />
+
 ## Features
 
 - Choose a password length of 16, 32, or 64 characters. The default is 32.
