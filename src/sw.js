@@ -1,5 +1,5 @@
 // Increment this cache version whenever a release changes an offline asset.
-const CACHE_NAME = 'random-string-v19';
+const CACHE_NAME = 'random-string-v20';
 const APP_FILES = [
   './',
   './index.html',

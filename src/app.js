@@ -8,6 +8,8 @@ const lengthButtons = [...document.querySelectorAll('[data-length]')];
 let selectedLength = 32;
 let statusTimer;
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 function generate(length) {
   copyButton.dataset.copied = 'false';
   const characters = [];
