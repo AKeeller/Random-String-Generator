@@ -57,6 +57,8 @@ copyButton.addEventListener('click', async () => {
     field.setAttribute('readonly', '');
     field.style.position = 'fixed';
     field.style.opacity = '0';
+    field.style.webkitUserSelect = 'text';
+    field.style.userSelect = 'text';
     document.body.append(field);
     field.select();
     const copied = document.execCommand('copy');
