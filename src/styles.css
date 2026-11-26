@@ -65,7 +65,10 @@ button {
 
 .result {
   width: 100%;
-  max-height: min(48vh, 390px);
+  height: clamp(8rem, 36vh, 16rem);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   overflow: hidden;
   color: #f1f0ea;
   font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -110,5 +113,5 @@ button {
 
 @media (max-height: 480px) {
   .generator { gap: 18px; }
-  .result { max-height: 42vh; font-size: clamp(16px, 5vh, 28px); line-height: 1.25; }
+  .result { height: 42vh; font-size: clamp(16px, 5vh, 28px); line-height: 1.25; }
 }
