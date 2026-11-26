@@ -1,4 +1,4 @@
-const CACHE_NAME = 'random-string-v6';
+const CACHE_NAME = 'random-string-v7';
 const APP_FILES = ['/', '/index.html', '/styles.css', '/app.js', '/manifest.webmanifest', '/icon.svg'];
 
 self.addEventListener('install', event => {

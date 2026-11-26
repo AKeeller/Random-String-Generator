@@ -144,6 +144,7 @@ button {
 }
 
 .copy-button {
+  position: relative;
   min-width: 104px;
   min-height: 44px;
   padding: 0 20px;
@@ -152,6 +153,51 @@ button {
   background: var(--copy);
   font-size: 15px;
   font-weight: 600;
+}
+
+.copy-label {
+  display: inline-block;
+  transition: opacity 160ms ease, transform 220ms ease;
+}
+
+.copy-check {
+  position: absolute;
+  inset: 0;
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  overflow: visible;
+  color: var(--status);
+  opacity: 0;
+  transform: scale(.35) rotate(-18deg);
+  transition: opacity 140ms ease, transform 260ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.copy-check path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  transition: stroke-dashoffset 240ms ease;
+}
+
+.copy-button[data-copied="true"] .copy-label {
+  opacity: 0;
+  transform: scale(.75);
+}
+
+.copy-button[data-copied="true"] .copy-check {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  transition-delay: 80ms;
+}
+
+.copy-button[data-copied="true"] .copy-check path {
+  stroke-dashoffset: 0;
+  transition-delay: 180ms;
 }
 
 .copy-button:active { background: var(--copy-active); }

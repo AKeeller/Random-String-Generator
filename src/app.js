@@ -3,11 +3,13 @@ const alphabet = Array.from({ length: 94 }, (_, index) => String.fromCharCode(in
 
 const result = document.querySelector('#result');
 const status = document.querySelector('#status');
+const copyButton = document.querySelector('#copy');
 const lengthButtons = [...document.querySelectorAll('[data-length]')];
 let selectedLength = 32;
 let statusTimer;
 
 function generate(length) {
+  copyButton.dataset.copied = 'false';
   const characters = [];
   const acceptedRange = Math.floor(0x1_0000_0000 / alphabet.length) * alphabet.length;
 
@@ -42,12 +44,13 @@ lengthButtons.forEach(button => {
   });
 });
 
-document.querySelector('#copy').addEventListener('click', async () => {
+copyButton.addEventListener('click', async () => {
   const value = result.textContent;
   try {
     if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
     await navigator.clipboard.writeText(value);
-    setStatus('Copied');
+    copyButton.dataset.copied = 'true';
+    setStatus('');
   } catch {
     const field = document.createElement('textarea');
     field.value = value;
@@ -58,7 +61,12 @@ document.querySelector('#copy').addEventListener('click', async () => {
     field.select();
     const copied = document.execCommand('copy');
     field.remove();
-    setStatus(copied ? 'Copied' : 'Copy unavailable — select the string to copy it.');
+    if (copied) {
+      copyButton.dataset.copied = 'true';
+      setStatus('');
+    } else {
+      setStatus('Copy unavailable — select the string to copy it.');
+    }
   }
 });
 
