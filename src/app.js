@@ -36,7 +36,10 @@ function setStatus(message) {
 lengthButtons.forEach(button => {
   button.addEventListener('click', () => {
     selectedLength = Number(button.dataset.length);
-    lengthButtons.forEach(item => item.toggleAttribute('data-selected', item === button));
+    lengthButtons.forEach(item => {
+      if (item === button) item.setAttribute('data-selected', 'true');
+      else item.removeAttribute('data-selected');
+    });
     generate(selectedLength);
     setStatus('');
   });
