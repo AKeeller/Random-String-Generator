@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="A tiny random string generator with an extended set of visible characters.">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Random String</title>
+  </head>
+  <body>
+    <main class="generator">
+      <div class="length-control">
+        <button type="button" data-length="16">16</button>
+        <button type="button" data-length="32" data-selected="true">32</button>
+        <button type="button" data-length="64">64</button>
+      </div>
+
+      <div id="result" class="result"></div>
+
+      <div class="actions">
+        <button id="copy" class="copy-button" type="button">Copy</button>
+        <span id="status" class="status"></span>
+      </div>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
