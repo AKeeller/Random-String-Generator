@@ -2,12 +2,12 @@
   "name": "Random String Generator",
   "short_name": "Random String",
   "description": "Generate random passwords using all visible ASCII characters.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f6f6f8",
   "theme_color": "#f6f6f8",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
 }
