@@ -1,0 +1,13 @@
+{
+  "name": "Random String Generator",
+  "short_name": "Random String",
+  "description": "Generate random strings from an extended set of visible characters.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#101114",
+  "theme_color": "#101114",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
